@@ -195,7 +195,7 @@ options("repos" = c(CRAN = "https://cran.uni-muenster.de/"))
 }
 
 ## List all rprofile functions
-.env$rprofile_functions <- function(){
+.env$rprofile.functions <- function(){
   cat(paste0("User .Rprofile \n") ,sep="")
   cat("s() - shortcut for summary\n",sep="")
   cat("h() - shortcut for head\n",sep="")
