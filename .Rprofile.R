@@ -14,11 +14,11 @@ options("repos" = c(CRAN = "https://cran.uni-muenster.de/"))
 .env <- new.env()
 
 ## Rprofile version
-.env$rprofile_version <- "1.07.5"
+.env$rprofile.version <- "1.07.5"
 
 ## Update RProfile
 .env$rprofile.update <- function(){
-  download.file(url = "", destfile = "~/.Rprofile")
+  download.file(url = "https://raw.githubusercontent.com/janikmiet/rprofile/main/.Rprofile.R", destfile = "~/.Rprofile")
   rstudioapi::restartSession()
 }
 
@@ -246,7 +246,7 @@ attach(.env)
     "Greetings and salutations",
     "Doctor"
   )
-  stringi <- paste0("\n", hello_message[sample(1:length(hello_message), 1)], " ",Sys.info()["user"][[1]],"! Loaded .Rprofile (v.",rprofile_version,") at ", strftime(Sys.time(),"%Y-%m-%d %H:%M:%S"), "\n")
+  stringi <- paste0("\n", hello_message[sample(1:length(hello_message), 1)], " ",Sys.info()["user"][[1]],"! Loaded .Rprofile (v.",rprofile.version,") at ", strftime(Sys.time(),"%Y-%m-%d %H:%M:%S"), "\n")
   cat(stringi)
 }
 
